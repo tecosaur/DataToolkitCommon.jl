@@ -6,9 +6,13 @@ completeness though, the help strings are reproduced here.
 The =datarepl= command is a docs-only function that mimics running the string in a
 =data>= REPL.
 
-#+begin_src @setup
-datarepl(cmd) =
-    DataToolkitBase.toplevel_execute_repl_cmd(cmd)
+#+begin_src @eval
+Core.eval(DataToolkitCommon, quote
+              datarepl(cmd) =
+                  DataToolkitBase.toplevel_execute_repl_cmd(cmd)
+              export datarepl
+          end)
+nothing
 #+end_src
 
 #+begin_src @example
