@@ -1,0 +1,93 @@
+#+title: REPL
+
+All of the relevant help for the REPL can be accessed from inside the REPL, for
+completeness though, the help strings are reproduced here with the =data= command
+macro.
+
+#+begin_src @example
+data`help`
+#+end_src
+
+#+begin_src @example
+data`?add`
+#+end_src
+
+#+begin_src @example
+data`?delete`
+#+end_src
+
+#+begin_src @example
+data`?config`
+#+end_src
+
+#+begin_src @example
+data`?config get`
+#+end_src
+
+#+begin_src @example
+data`?config set`
+#+end_src
+
+#+begin_src @example
+data`?config unset`
+#+end_src
+
+#+begin_src @example
+data`?list`
+#+end_src
+
+#+begin_src @example
+data`?make`
+#+end_src
+
+#+begin_src @example
+data`?plugin`
+#+end_src
+
+#+begin_src @example
+data`?plugin add`
+#+end_src
+
+#+begin_src @example
+data`?plugin remove`
+#+end_src
+
+#+begin_src @example
+data`?plugin edit`
+#+end_src
+
+#+begin_src @example
+data`?plugin info`
+#+end_src
+
+#+begin_src @example
+data`?plugin list`
+#+end_src
+
+#+begin_src @example
+data`?search`
+#+end_src
+
+#+begin_src @example
+data`?show`
+#+end_src
+
+#+begin_src @example
+data`?stack`
+#+end_src
+
+#+begin_src @example
+data`?stack promote`
+#+end_src
+
+#+begin_src @example
+data`?stack demote`
+#+end_src
+
+#+begin_src @example
+data`?stack load`
+#+end_src
+
+#+begin_src @example
+data`?stack remove`
+#+end_src
