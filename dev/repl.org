@@ -1,93 +1,100 @@
 #+title: REPL
 
 All of the relevant help for the REPL can be accessed from inside the REPL, for
-completeness though, the help strings are reproduced here with the =data= command
-macro.
+completeness though, the help strings are reproduced here.
 
-#+begin_src @example
-data`help`
+The =datarepl= command is a docs-only function that mimics running the string in a
+=data>= REPL.
+
+#+begin_src @setup
+datarepl(cmd) =
+    DataToolkitBase.toplevel_execute_repl_cmd(cmd)
 #+end_src
 
 #+begin_src @example
-data`?add`
+datarepl("help")
 #+end_src
 
 #+begin_src @example
-data`?delete`
+datarepl("?add")
 #+end_src
 
 #+begin_src @example
-data`?config`
+datarepl("?delete")
 #+end_src
 
 #+begin_src @example
-data`?config get`
+datarepl("?config")
 #+end_src
 
 #+begin_src @example
-data`?config set`
+datarepl("?config get")
 #+end_src
 
 #+begin_src @example
-data`?config unset`
+datarepl("?config set")
 #+end_src
 
 #+begin_src @example
-data`?list`
+datarepl("?config unset")
 #+end_src
 
 #+begin_src @example
-data`?make`
+datarepl("?list")
 #+end_src
 
 #+begin_src @example
-data`?plugin`
+datarepl("?make")
 #+end_src
 
 #+begin_src @example
-data`?plugin add`
+datarepl("?plugin")
 #+end_src
 
 #+begin_src @example
-data`?plugin remove`
+datarepl("?plugin add")
 #+end_src
 
 #+begin_src @example
-data`?plugin edit`
+datarepl("?plugin remove")
 #+end_src
 
 #+begin_src @example
-data`?plugin info`
+datarepl("?plugin edit")
 #+end_src
 
 #+begin_src @example
-data`?plugin list`
+datarepl("?plugin info")
 #+end_src
 
 #+begin_src @example
-data`?search`
+datarepl("?plugin list")
 #+end_src
 
 #+begin_src @example
-data`?show`
+datarepl("?search")
 #+end_src
 
 #+begin_src @example
-data`?stack`
+datarepl("?show")
 #+end_src
 
 #+begin_src @example
-data`?stack promote`
+datarepl("?stack")
 #+end_src
 
 #+begin_src @example
-data`?stack demote`
+datarepl("?stack promote")
 #+end_src
 
 #+begin_src @example
-data`?stack load`
+datarepl("?stack demote")
 #+end_src
 
 #+begin_src @example
-data`?stack remove`
+datarepl("?stack load")
+#+end_src
+
+#+begin_src @example
+datarepl("?stack remove")
 #+end_src
