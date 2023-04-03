@@ -1,2 +1,192 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>REPL · DataToolkitCommon.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../"><img src="../assets/logo.svg" alt="DataToolkitCommon.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../">DataToolkitCommon.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Introduction</a></li><li><span class="tocitem">Storage</span><ul><li><a class="tocitem" href="../storage/filesystem/">Filesystem</a></li><li><a class="tocitem" href="../storage/null/">Null</a></li><li><a class="tocitem" href="../storage/passthrough/">Passthrough</a></li><li><a class="tocitem" href="../storage/raw/">Raw</a></li><li><a class="tocitem" href="../storage/web/">Web</a></li></ul></li><li><span class="tocitem">Loaders</span><ul><li><a class="tocitem" href="../loaders/compression/">Compression</a></li><li><a class="tocitem" href="../loaders/csv/">CSV</a></li><li><a class="tocitem" href="../loaders/delim/">Delim</a></li><li><a class="tocitem" href="../loaders/iotofile/">IO to File</a></li><li><a class="tocitem" href="../loaders/json/">JSON</a></li><li><a class="tocitem" href="../loaders/julia/">Julia</a></li><li><a class="tocitem" href="../loaders/chain/">Chain</a></li><li><a class="tocitem" href="../loaders/passthrough/">Passthrough</a></li><li><a class="tocitem" href="../loaders/sqlite/">SQLite</a></li><li><a class="tocitem" href="../loaders/xlsx/">XLSX</a></li><li><a class="tocitem" href="../loaders/zip/">Zip</a></li></ul></li><li><span class="tocitem">Plugins</span><ul><li><a class="tocitem" href="../plugins/defaults/">Defaults</a></li><li><a class="tocitem" href="../plugins/loadcache/">Loadcache</a></li><li><a class="tocitem" href="../plugins/log/">Log</a></li><li><a class="tocitem" href="../plugins/memorise/">Memorise</a></li><li><a class="tocitem" href="../plugins/versions/">Versions</a></li></ul></li><li class="is-active"><a class="tocitem" href>REPL</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>REPL</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>REPL</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/tecosaur/DataToolkitCommon.jl/blob/main/docs/src/repl.md#L" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="REPL"><a class="docs-heading-anchor" href="#REPL">REPL</a><a id="REPL-1"></a><a class="docs-heading-anchor-permalink" href="#REPL" title="Permalink"></a></h1><p>All of the relevant help for the REPL can be accessed from inside the REPL, for completeness though, the help strings are reproduced here.</p><p>The <code>datarepl</code> command is a docs-only function that mimics running the string in a <code>data&gt;</code> REPL.</p><pre><code class="language- hljs">datarepl(&quot;help&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?add&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?delete&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?config&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?config get&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?config set&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?config unset&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?list&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?make&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin add&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin remove&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin edit&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin info&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?plugin list&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?search&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?show&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?stack&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?stack promote&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?stack demote&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?stack load&quot;)</code></pre><pre><code class="language- hljs">datarepl(&quot;?stack remove&quot;)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 2 April 2023 16:35">Sunday 2 April 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>REPL · DataToolkitCommon.jl</title><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.045/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.24/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../"><img src="../assets/logo.svg" alt="DataToolkitCommon.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../">DataToolkitCommon.jl</a></span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Introduction</a></li><li><span class="tocitem">Storage</span><ul><li><a class="tocitem" href="../storage/filesystem/">Filesystem</a></li><li><a class="tocitem" href="../storage/null/">Null</a></li><li><a class="tocitem" href="../storage/passthrough/">Passthrough</a></li><li><a class="tocitem" href="../storage/raw/">Raw</a></li><li><a class="tocitem" href="../storage/web/">Web</a></li></ul></li><li><span class="tocitem">Loaders</span><ul><li><a class="tocitem" href="../loaders/compression/">Compression</a></li><li><a class="tocitem" href="../loaders/csv/">CSV</a></li><li><a class="tocitem" href="../loaders/delim/">Delim</a></li><li><a class="tocitem" href="../loaders/iotofile/">IO to File</a></li><li><a class="tocitem" href="../loaders/json/">JSON</a></li><li><a class="tocitem" href="../loaders/julia/">Julia</a></li><li><a class="tocitem" href="../loaders/chain/">Chain</a></li><li><a class="tocitem" href="../loaders/passthrough/">Passthrough</a></li><li><a class="tocitem" href="../loaders/sqlite/">SQLite</a></li><li><a class="tocitem" href="../loaders/xlsx/">XLSX</a></li><li><a class="tocitem" href="../loaders/zip/">Zip</a></li></ul></li><li><span class="tocitem">Plugins</span><ul><li><a class="tocitem" href="../plugins/defaults/">Defaults</a></li><li><a class="tocitem" href="../plugins/loadcache/">Loadcache</a></li><li><a class="tocitem" href="../plugins/log/">Log</a></li><li><a class="tocitem" href="../plugins/memorise/">Memorise</a></li><li><a class="tocitem" href="../plugins/versions/">Versions</a></li></ul></li><li class="is-active"><a class="tocitem" href>REPL</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>REPL</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>REPL</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/tecosaur/DataToolkitCommon.jl/blob/main/docs/src/repl.md#L" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="REPL"><a class="docs-heading-anchor" href="#REPL">REPL</a><a id="REPL-1"></a><a class="docs-heading-anchor-permalink" href="#REPL" title="Permalink"></a></h1><p>All of the relevant help for the REPL can be accessed from inside the REPL. They are repeated here verbatim.</p><h3><code>help</code></h3><pre><code class="language-ansi hljs"> Command  Action                                            
+ ───────────────────────────────────────────────────────────
+ add      Add a data set to the current collection          
+ delete   Delete a data set                                 
+ init     Initialise a new data collection                  
+ config   Inspect and modify the current configuration      
+ list     List the datasets in a certain collection         
+ make     Create a new data set from existing information   
+ plugin   Inspect and modify the set of plugins used        
+ search   Search for a particular data collection           
+ show     List the dataset refered to by an identifier      
+ stack    Operate on the data collection stack              
+ help     Display help information on the available commands
+</code></pre><hr/><h3><code>?add</code></h3><pre><code class="language-ansi hljs"> Add a data set to the current collection
+
+This will interactively ask for all required information.
+
+Optionally, the name and source can be specified using the following forms:
+  add NAME
+  add NAME from SOURCE
+  add from SOURCE
+As a shorthand, &#39;f&#39; can be used instead of &#39;from&#39;.
+
+The transformers drivers used can also be specified by using a &#39;via&#39; argument
+before &#39;from&#39;, with a form like so:
+  add via TRANSFORMERS...
+  add NAME via TRANSFORMERS... from SOURCE
+The type of transformer can also be specified using flags. Namely storage (-s),
+loader (-l), and writer (-w). For example:
+  add via -s web -l csv
+Invalid transformer drivers are automatically skipped, so one could use:
+  add via -sl web csv
+which would be equivalent to `add via -s web csv -l web csv`, but only &#39;web&#39;
+will be reccognised as a valid storage backend and &#39;csv&#39; as a valid loader.
+This works well in most cases, which is why &#39;-sl&#39; are the default flags.
+
+Full examples:
+  add iris from https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
+  add iris via web csv from https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
+  add iris via -s web -l csv from https://github.com/mwaskom/seaborn-data/blob/master/iris.csv
+  add &quot;from&quot; from.txt # add a data set with the name from
+</code></pre><h3><code>?delete</code></h3><pre><code class="language-ansi hljs"> Delete a data set
+
+Examples:
+  delete mydata
+</code></pre><h3><code>?config</code></h3><pre><code class="language-ansi hljs"> Inspect and modify the current configuration
+
+ Subcommand  Action                                            
+ ──────────────────────────────────────────────────────────────
+ get         Get the current configuration                     
+ set         Set a configuration property                      
+ unset       Remove a configuration property                   
+ help        Display help information on the available commands
+</code></pre><h3><code>?config get</code></h3><pre><code class="language-ansi hljs"> Get the current configuration
+
+The parameter to get the configuration of should be given using TOML-style dot
+seperation.
+
+Examples:
+  get defaults.memorise
+  get loadcache.path
+  get my.&quot;special thing&quot;.extra
+</code></pre><h3><code>?config set</code></h3><pre><code class="language-ansi hljs"> Set a configuration property
+
+The parameter to set the configuration of should be given using TOML-style dot
+seperation.
+
+Similarly, the new value should be expressed using TOML syntax.
+
+Examples:
+  set defaults.memorise true
+  set loadcache.path &quot;data/loadcache&quot;
+  set my.&quot;special thing&quot;.extra {a=1, b=2}
+</code></pre><h3><code>?config unset</code></h3><pre><code class="language-ansi hljs"> Remove a configuration property
+
+The parameter to be removed should be given using TOML-style dot seperation.
+
+Examples:
+  unset defaults.memorise
+  unset loadcache.path
+  unset my.&quot;special thing&quot;.extra
+</code></pre><h3><code>?list</code></h3><pre><code class="language-ansi hljs"> List the datasets in a certain collection
+
+By default, the datasets of the active collection are shown.
+</code></pre><h3><code>?make</code></h3><pre><code class="language-ansi hljs"> Create a new data set from existing information
+
+This drops you into a sandbox where you can interactively develop
+a script to produce a new data set.
+
+Usage:
+  make
+  make new_dataset_name
+</code></pre><h3><code>?plugin</code></h3><pre><code class="language-ansi hljs"> Inspect and modify the set of plugins used
+
+Call without any arguments to see the availible subcommands.
+
+ Subcommand  Action                                            
+ ──────────────────────────────────────────────────────────────
+ add         Add plugins to the first data collection          
+ remove      Remove plugins from the first data collection     
+ edit        Edit the plugins used by the first data collection
+ info        Fetch the documentation of a plugin               
+ list        List the plugins used by the first data collection
+ help        Display help information on the available commands
+</code></pre><h3><code>?plugin add</code></h3><pre><code class="language-ansi hljs"> Add plugins to the first data collection
+</code></pre><h3><code>?plugin remove</code></h3><pre><code class="language-ansi hljs"> Remove plugins from the first data collection
+</code></pre><h3><code>?plugin edit</code></h3><pre><code class="language-ansi hljs"> Edit the plugins used by the first data collection
+</code></pre><h3><code>?plugin info</code></h3><pre><code class="language-ansi hljs"> Fetch the documentation of a plugin
+</code></pre><h3><code>?plugin list</code></h3><pre><code class="language-ansi hljs"> List the plugins used by the first data collection
+
+With &#39;-a&#39;/&#39;--availible&#39; all loaded plugins are listed instead.
+</code></pre><h3><code>?search</code></h3><pre><code class="language-ansi hljs"> Search for a particular data collection
+</code></pre><h3><code>?show</code></h3><pre><code class="language-ansi hljs"> List the dataset refered to by an identifier
+</code></pre><h3><code>?stack</code></h3><pre><code class="language-ansi hljs"> Operate on the data collection stack
+
+ Subcommand  Action                                            
+ ──────────────────────────────────────────────────────────────
+             List the data collections of the data stack       
+ promote     Move an entry up the stack                        
+ demote      Move an entry down the stack                      
+ load        Load a data collection onto the top of the stack  
+ remove      Remove an entry from the stack                    
+ help        Display help information on the available commands
+</code></pre><h3><code>?stack promote</code></h3><pre><code class="language-ansi hljs"> Move an entry up the stack
+
+An entry can be identified using any of the following:
+- the current position in the stack
+- the name of the data collection
+- the UUID of the data collection
+
+The number of positions the entry should be promoted by defaults to 1, but can
+optionally be specified by putting either an integer or the character &#39;*&#39; after
+the identifier. When &#39;*&#39; is given, the entry will be promoted to the top of the
+data stack.
+
+Examples with different identifier forms:
+  promote 2
+  promote mydata
+  promote 853a9f6a-cd5e-4447-a0a4-b4b2793e0a48
+
+Examples with different promotion degrees:
+  promote mydata
+  promote mydata 3
+  promote mydata *
+</code></pre><h3><code>?stack demote</code></h3><pre><code class="language-ansi hljs"> Move an entry down the stack
+
+An entry can be identified using any of the following:
+- the current position in the stack
+- the name of the data collection
+- the UUID of the data collection
+
+The number of positions the entry should be demoted by defaults to 1, but can
+optionally be specified by putting either an integer or the character &#39;*&#39; after
+the identifier. When &#39;*&#39; is given, the entry will be demoted to the bottom of the
+data stack.
+
+Examples with different identifier forms:
+  demote 2
+  demote mydata
+  demote 853a9f6a-cd5e-4447-a0a4-b4b2793e0a48
+
+Examples with different demotion degrees:
+  demote mydata
+  demote mydata 3
+  demote mydata *
+</code></pre><h3><code>?stack load</code></h3><pre><code class="language-ansi hljs"> Load a data collection onto the top of the stack
+
+The data collection should be given by a path to either:
+- a Data TOML file
+- a folder containing a &#39;Data.toml&#39; file
+
+The path can be optionally preceeded by an position to insert the loaded
+collection into the stack at. The default behaviour is to put the new collection
+at the top of the stack.
+
+Examples:
+  load path/to/mydata.toml
+  load 2 somefolder/
+</code></pre><h3><code>?stack remove</code></h3><pre><code class="language-ansi hljs"> Remove an entry from the stack
+
+An entry can be identified using any of the following:
+- the current position in the stack
+- the name of the data collection
+- the UUID of the data collection
+
+Examples:
+  remove 2
+  remove mydata
+  remove 853a9f6a-cd5e-4447-a0a4-b4b2793e0a48
+</code></pre><h3><code>?help</code></h3><pre><code class="language-ansi hljs"> Display help information on the availible Data REPL commands
+</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Monday 3 April 2023 09:54">Monday 3 April 2023</span>. Using Julia version 1.8.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

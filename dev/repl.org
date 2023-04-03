@@ -1,104 +1,121 @@
 #+title: REPL
 
-All of the relevant help for the REPL can be accessed from inside the REPL, for
-completeness though, the help strings are reproduced here.
-
-The =datarepl= command is a docs-only function that mimics running the string in a
-=data>= REPL.
+All of the relevant help for the REPL can be accessed from inside the REPL. They
+are repeated here verbatim.
 
 #+begin_src @eval
-Core.eval(DataToolkitCommon, quote
-              datarepl(cmd) =
-                  DataToolkitBase.toplevel_execute_repl_cmd(cmd)
-              export datarepl
+using Markdown
+Core.eval(Main, quote
+              function datarepl(cmd)
+                  Markdown = $Markdown
+                  pipe = Pipe()
+                  started = Base.Event()
+                  writer = @async redirect_stdio(stdout=pipe, stderr=pipe) do
+                      notify(started)
+                      DataToolkitCommon.DataToolkitBase.execute_repl_cmd(cmd)
+                      close(Base.pipe_writer(pipe))
+                  end
+                  wait(started)
+                  result = read(pipe, String)
+                  wait(writer)
+                  Markdown.MD([
+                      Markdown.Header{3}([Markdown.Code("$cmd")]),
+                      Markdown.Code("ansi", replace(result, r"\e\[\d+m" => ""))])
+              end
           end)
 nothing
 #+end_src
 
-#+begin_src @example
-datarepl("help")
+#+begin_src @eval
+Main.datarepl("help")
 #+end_src
 
-#+begin_src @example
-datarepl("?add")
+-----
+
+#+begin_src @eval
+Main.datarepl("?add")
 #+end_src
 
-#+begin_src @example
-datarepl("?delete")
+#+begin_src @eval
+Main.datarepl("?delete")
 #+end_src
 
-#+begin_src @example
-datarepl("?config")
+#+begin_src @eval
+Main.datarepl("?config")
 #+end_src
 
-#+begin_src @example
-datarepl("?config get")
+#+begin_src @eval
+Main.datarepl("?config get")
 #+end_src
 
-#+begin_src @example
-datarepl("?config set")
+#+begin_src @eval
+Main.datarepl("?config set")
 #+end_src
 
-#+begin_src @example
-datarepl("?config unset")
+#+begin_src @eval
+Main.datarepl("?config unset")
 #+end_src
 
-#+begin_src @example
-datarepl("?list")
+#+begin_src @eval
+Main.datarepl("?list")
 #+end_src
 
-#+begin_src @example
-datarepl("?make")
+#+begin_src @eval
+Main.datarepl("?make")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin")
+#+begin_src @eval
+Main.datarepl("?plugin")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin add")
+#+begin_src @eval
+Main.datarepl("?plugin add")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin remove")
+#+begin_src @eval
+Main.datarepl("?plugin remove")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin edit")
+#+begin_src @eval
+Main.datarepl("?plugin edit")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin info")
+#+begin_src @eval
+Main.datarepl("?plugin info")
 #+end_src
 
-#+begin_src @example
-datarepl("?plugin list")
+#+begin_src @eval
+Main.datarepl("?plugin list")
 #+end_src
 
-#+begin_src @example
-datarepl("?search")
+#+begin_src @eval
+Main.datarepl("?search")
 #+end_src
 
-#+begin_src @example
-datarepl("?show")
+#+begin_src @eval
+Main.datarepl("?show")
 #+end_src
 
-#+begin_src @example
-datarepl("?stack")
+#+begin_src @eval
+Main.datarepl("?stack")
 #+end_src
 
-#+begin_src @example
-datarepl("?stack promote")
+#+begin_src @eval
+Main.datarepl("?stack promote")
 #+end_src
 
-#+begin_src @example
-datarepl("?stack demote")
+#+begin_src @eval
+Main.datarepl("?stack demote")
 #+end_src
 
-#+begin_src @example
-datarepl("?stack load")
+#+begin_src @eval
+Main.datarepl("?stack load")
 #+end_src
 
-#+begin_src @example
-datarepl("?stack remove")
+#+begin_src @eval
+Main.datarepl("?stack remove")
+#+end_src
+
+#+begin_src @eval
+Main.datarepl("?help")
 #+end_src
