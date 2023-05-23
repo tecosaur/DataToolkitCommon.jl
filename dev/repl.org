@@ -20,7 +20,7 @@ Core.eval(Main, quote
                   wait(writer)
                   Markdown.MD([
                       Markdown.Header{3}([Markdown.Code("$cmd")]),
-                      Markdown.Code("ansi", replace(result, r"\e\[\d+m" => ""))])
+                      Markdown.Code("ansi", replace(result, r"\e\[\d+m" => "") |> rstrip)])
               end
           end)
 nothing
