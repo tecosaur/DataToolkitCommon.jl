@@ -11,7 +11,7 @@
  make     Create a new data set from existing information   
  plugin   Inspect and modify the set of plugins used        
  search   Search for a particular data collection           
- show     List the dataset refered to by an identifier      
+ show     Show the dataset refered to by an identifier      
  stack    Operate on the data collection stack              
  store    Manipulate the data store                         
  help     Display help information on the available commands
@@ -55,6 +55,12 @@ Full examples:
 
 By default, this operates on the active collection, however it can
 also be applied to any other collection or a specific data set.
+
+Usage:
+  check (runs on the active collection)
+  check COLLECTION
+  check IDENTIFIER
+
 </code></pre><h3><code>?config get</code></h3><pre><code class="language-ansi hljs"> Get the current configuration
 
 The parameter to get the configuration of should be given using TOML-style dot
@@ -85,6 +91,13 @@ Examples:
 Examples:
   delete mydata
 </code></pre><h3><code>?edit</code></h3><pre><code class="language-ansi hljs"> Edit the specification of a dataset
+
+Open the specified dataset as a TOML file for editing,
+and reload the dataset from the edited contents.
+
+Usage:
+  edit IDENTIFIER
+
 </code></pre><h3><code>?init</code></h3><pre><code class="language-ansi hljs"> Initialise a new data collection
 
 Optionally, a data collection name and path can be specified with the forms:
@@ -106,6 +119,11 @@ Example usages:
 </code></pre><h3><code>?list</code></h3><pre><code class="language-ansi hljs"> List the datasets in a certain collection
 
 By default, the datasets of the active collection are shown.
+
+Usage:
+  list (lists dataset of the active collection)
+  list COLLECTION
+
 </code></pre><h3><code>?make</code></h3><pre><code class="language-ansi hljs"> Create a new data set from existing information
 
 This drops you into a sandbox where you can interactively develop
@@ -134,7 +152,11 @@ Call without any arguments to see the availible subcommands.
 
 With &#39;-a&#39;/&#39;--availible&#39; all loaded plugins are listed instead.
 </code></pre><h3><code>?search</code></h3><pre><code class="language-ansi hljs"> Search for a particular data collection
-</code></pre><h3><code>?show</code></h3><pre><code class="language-ansi hljs"> List the dataset refered to by an identifier
+
+Usage:
+  search TEXT...
+
+</code></pre><h3><code>?show</code></h3><pre><code class="language-ansi hljs"> Show the dataset refered to by an identifier
 </code></pre><h3><code>?stack</code></h3><pre><code class="language-ansi hljs"> Operate on the data collection stack
 
  Subcommand  Action                                            
@@ -240,4 +262,4 @@ Scan the inventory and perform a garbage collection sweep.
 Optionally provide the -d/--dryrun flag to prevent file deletion.
 </code></pre><h3><code>?store stats</code></h3><pre><code class="language-ansi hljs"> Show statistics about the data store
 </code></pre><h3><code>?help</code></h3><pre><code class="language-ansi hljs"> Display help information on the availible Data REPL commands
-</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Tuesday 23 May 2023 15:15">Tuesday 23 May 2023</span>. Using Julia version 1.9.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Tuesday 23 May 2023 15:28">Tuesday 23 May 2023</span>. Using Julia version 1.9.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
