@@ -14,7 +14,7 @@
  show     Show the dataset refered to by an identifier      
  stack    Operate on the data collection stack              
  store    Manipulate the data store                         
- help     Display help information on the available commands
+ help     Display help information commands and transformers
 
  [2;3mCommands can also be triggered by unique prefixes or substrings.[22;23m
 </code></pre><hr/><h3><code>?add</code></h3><pre><code class="language-ansi hljs"> Add a data set to the current collection
@@ -52,7 +52,7 @@ Full examples:
  get         Get the current configuration                     
  set         Set a configuration property                      
  unset       Remove a configuration property                   
- help        Display help information on the available commands
+ help        Display help information commands and transformers
 </code></pre><h3><code>?check</code></h3><pre><code class="language-ansi hljs"> Check the state for potential issues
 
 By default, this operates on the active collection, however it can
@@ -137,7 +137,7 @@ Usage:
  edit        Edit the plugins used by the first data collection
  info        Fetch the documentation of a plugin               
  list        List the plugins used by the first data collection
- help        Display help information on the available commands
+ help        Display help information commands and transformers
 </code></pre><h3><code>?plugin add</code></h3><pre><code class="language-ansi hljs"> Add plugins to the first data collection
 </code></pre><h3><code>?plugin remove</code></h3><pre><code class="language-ansi hljs"> Remove plugins from the first data collection
 </code></pre><h3><code>?plugin edit</code></h3><pre><code class="language-ansi hljs"> Edit the plugins used by the first data collection
@@ -162,7 +162,7 @@ Usage:
  demote      Move an entry down the stack                      
  load        Load a data collection onto the top of the stack  
  remove      Remove an entry from the stack                    
- help        Display help information on the available commands
+ help        Display help information commands and transformers
 </code></pre><h3><code>?stack promote</code></h3><pre><code class="language-ansi hljs"> Move an entry up the stack
 
 An entry can be identified using any of the following:
@@ -238,7 +238,7 @@ Examples:
  fetch       Fetch data storage sources                        
  gc          Garbage Collect                                   
  stats       Show statistics about the data store              
- help        Display help information on the available commands
+ help        Display help information commands and transformers
 </code></pre><h3><code>?store config</code></h3><pre><code class="language-ansi hljs"> Manage configuration
 
  Subcommand  Action                                            
@@ -246,7 +246,7 @@ Examples:
  get         Get the current configuration                     
  set         Set a configuration parameter                     
  reset       Set a configuration parameter                     
- help        Display help information on the available commands
+ help        Display help information commands and transformers
 </code></pre><h3><code>?store expunge</code></h3><pre><code class="language-ansi hljs"> Remove a data collection from the store
 
 Usage:
@@ -260,4 +260,16 @@ Optionally provide the -d/--dryrun flag to prevent file deletion.
 </code></pre><h3><code>?help</code></h3><pre><code class="language-ansi hljs"> Display help information on the availible Data REPL commands
 
 For convenience, help information can also be accessed via &#39;?&#39;, e.g. &#39;?help&#39;.
-</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 4 June 2023 15:10">Sunday 4 June 2023</span>. Using Julia version 1.9.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+
+Help for data transformers can also be accessed by asking for the help of the
+transformer name prefixed by &#39;:&#39; (i.e. &#39;:transformer&#39;), and a list of documented
+transformers can be pulled up with just &#39;:&#39;.
+
+Usage:
+    help
+    help CMD
+    help PARENT CMD
+    PARENT help CMD
+    help :
+    help :TRANSFORMER
+</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../plugins/versions/">« Versions</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 8 June 2023 13:42">Thursday 8 June 2023</span>. Using Julia version 1.9.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
