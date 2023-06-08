@@ -44,7 +44,7 @@ nothing
 #+end_src
 
 #+begin_src @eval
-Main.datareplhelp("help")
+Main.datarepl("help")
 #+end_src
 
 #+begin_src @eval
@@ -160,5 +160,9 @@ Main.datareplhelp("store gc")
 #+end_src
 
 #+begin_src @eval
-Main.datareplhelp("store stats", postrule=false)
+Main.datareplhelp("store stats")
+#+end_src
+
+#+begin_src @eval
+Main.datareplhelp("help", postrule=false)
 #+end_src
