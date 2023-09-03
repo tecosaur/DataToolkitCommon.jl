@@ -1,0 +1,5 @@
+#+title: Store
+
+#+begin_src @eval
+Main.DataToolkitCommon.DataToolkitBase.plugin_info("store")
+#+end_src
