@@ -7,17 +7,17 @@ end</code></pre><p>In both cases, additional information can be provided via the
     # Write `info` to `destination`, and return
     # not-nothing if the operation succeeds.
 end</code></pre><h1>Parameters</h1><ul><li><code>input</code>: (loading only) The data type required for direct input.</li><li><code>path</code>: A local file path, relative to <code>pathroot</code> if provided or the directory of the data TOML file.</li><li><code>pathroot</code>: The root path to expand <code>path</code> against, relative to the directory of the data TOML file.</li><li><code>function</code>: The function as a string, inline in the data TOML file.</li><li><code>arguments</code>: Arguments to be provided to the called function.</li></ul><h1>Usage examples</h1><pre><code class="language-julia hljs">[[addone.loader]]
-driver ` &quot;julia&quot;
-input ` &quot;Number&quot;
-function ` &quot;n -&gt; n+1&quot;</code></pre><pre><code class="language-julia hljs">[[combined.loader]]
-driver ` &quot;julia&quot;
-path ` &quot;scripts/mergedata.jl&quot;
+driver = &quot;julia&quot;
+input = &quot;Number&quot;
+function = &quot;n -&gt; n+1&quot;</code></pre><pre><code class="language-julia hljs">[[combined.loader]]
+driver = &quot;julia&quot;
+path = &quot;scripts/mergedata.jl&quot;
 
 [combined.loader.arguments]
-foo ` &quot;📇DATASET&lt;&lt;foo::DataFrame&gt;&gt;&quot;
-bar ` &quot;📇DATASET&lt;&lt;bar::DataFrame&gt;&gt;&quot;
-baz ` &quot;📇DATASET&lt;&lt;baz::DataFrame&gt;&gt;&quot;</code></pre><pre><code class="language-julia hljs">[[repeated.loader]]
-driver ` &quot;julia&quot;
-input ` &quot;Integer&quot;
-function ` &quot;(n::Integer; data::DataFrame) -&gt; repeat(data, n)&quot;
-arguments ` { data ` &quot;📇DATASET&lt;&lt;iris::DataFrame&gt;&gt;&quot; }</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../json/">« JSON</a><a class="docs-footer-nextpage" href="../netpbm/">Netpbm »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Wednesday 27 September 2023 13:58">Wednesday 27 September 2023</span>. Using Julia version 1.9.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+foo = &quot;📇DATASET&lt;&lt;foo::DataFrame&gt;&gt;&quot;
+bar = &quot;📇DATASET&lt;&lt;bar::DataFrame&gt;&gt;&quot;
+baz = &quot;📇DATASET&lt;&lt;baz::DataFrame&gt;&gt;&quot;</code></pre><pre><code class="language-julia hljs">[[repeated.loader]]
+driver = &quot;julia&quot;
+input = &quot;Integer&quot;
+function = &quot;(n::Integer; data::DataFrame) -&gt; repeat(data, n)&quot;
+arguments = { data = &quot;📇DATASET&lt;&lt;iris::DataFrame&gt;&gt;&quot; }</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../json/">« JSON</a><a class="docs-footer-nextpage" href="../netpbm/">Netpbm »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Sunday 8 October 2023 07:12">Sunday 8 October 2023</span>. Using Julia version 1.9.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
