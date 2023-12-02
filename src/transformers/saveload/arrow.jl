@@ -1,7 +1,7 @@
-function load(loader::DataLoader{:arrow}, file::IO, sink::Type)
+function load(loader::DataLoader{:arrow}, io::IO, sink::Type)
     @import Arrow
     convert::Bool = @getparam loader."convert"::Bool true
-    result = Arrow.Table(file; convert) |>
+    result = Arrow.Table(io; convert) |>
     if sink == Any || sink == Arrow.Table
         identity
     elseif QualifiedType(sink) == QualifiedType(:DataFrames, :DataFrame)
@@ -10,7 +10,7 @@ function load(loader::DataLoader{:arrow}, file::IO, sink::Type)
     result
 end
 
-function save(writer::DataWriter{:arrow}, file::IO, tbl)
+function save(writer::DataWriter{:arrow}, io::IO, tbl)
     @import Arrow
     compress::Union{Symbol, Nothing} = @getparam loader."compress"::Union{Symbol, Nothing} nothing
     alignment::Int = @getparam loader."alignment"::Int 8
@@ -21,7 +21,7 @@ function save(writer::DataWriter{:arrow}, file::IO, tbl)
     maxdepth::Int = @getparam loader."maxdepth"::Int 6
     ntasks::Int = @getparam loader."ntasks"::Int typemax(Int32)
     Arrow.write(
-        file, tbl;
+        io, tbl;
         compress, alignment,
         dictencode, dictencodenested,
         denseunions, largelists,
