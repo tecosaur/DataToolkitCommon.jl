@@ -44,7 +44,7 @@ Parse and serialize arrow files
 
 The `arrow` driver expects data to be provided via `IO`.
 
-By default this driver supports parsing to three data types:
+By default this driver supports parsing to two data types:
 - `DataFrame`
 - `Arrow.Table`
 
