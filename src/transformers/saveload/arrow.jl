@@ -12,14 +12,14 @@ end
 
 function save(writer::DataWriter{:arrow}, io::IO, tbl)
     @import Arrow
-    compress::Union{Symbol, Nothing} = @getparam loader."compress"::Union{Symbol, Nothing} nothing
-    alignment::Int = @getparam loader."alignment"::Int 8
-    dictencode::Bool = @getparam loader."dictencode"::Bool false
-    dictencodenested::Bool = @getparam loader."dictencodenested"::Bool false
-    denseunions::Bool = @getparam loader."denseunions"::Bool true
-    largelists::Bool = @getparam loader."largelists"::Bool false
-    maxdepth::Int = @getparam loader."maxdepth"::Int 6
-    ntasks::Int = @getparam loader."ntasks"::Int typemax(Int32)
+    compress = @getparam loader."compress"::Union{Symbol, Nothing} nothing
+    alignment = @getparam loader."alignment"::Int 8
+    dictencode = @getparam loader."dictencode"::Bool false
+    dictencodenested = @getparam loader."dictencodenested"::Bool false
+    denseunions = @getparam loader."denseunions"::Bool true
+    largelists = @getparam loader."largelists"::Bool false
+    maxdepth = @getparam loader."maxdepth"::Int 6
+    ntasks = @getparam loader."ntasks"::Int typemax(Int32)
     Arrow.write(
         io, tbl;
         compress, alignment,
@@ -56,6 +56,7 @@ By default this driver supports parsing to two data types:
 # Parameters
 
 - `convert`: controls whether certain arrow primitive types will be converted to more friendly Julia defaults
+- The writer mirrors the arguments available in `Arrow.write`.
 
 # Usage examples
 
