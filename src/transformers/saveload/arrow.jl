@@ -30,7 +30,8 @@ function save(writer::DataWriter{:arrow}, io::IO, tbl)
 end
 
 supportedtypes(::Type{DataLoader{:arrow}}) =
-    [QualifiedType(:DataFrames, :DataFrame)]
+    [QualifiedType(:DataFrames, :DataFrame),
+     QualifiedType(:Arrow, :Table)]
 
 create(::Type{DataLoader{:arrow}}, source::String) =
     !isnothing(match(r"\.arrow$"i, source))
