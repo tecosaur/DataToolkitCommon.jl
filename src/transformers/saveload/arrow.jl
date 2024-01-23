@@ -1,6 +1,6 @@
 function load(loader::DataLoader{:arrow}, io::IO, sink::Type)
     @import Arrow
-    convert::Bool = @getparam loader."convert"::Bool true
+    convert = @getparam loader."convert"::Bool true
     result = Arrow.Table(io; convert) |>
     if sink == Any || sink == Arrow.Table
         identity
@@ -12,21 +12,20 @@ end
 
 function save(writer::DataWriter{:arrow}, io::IO, tbl)
     @import Arrow
-    compress = @getparam loader."compress"::Union{Symbol, Nothing} nothing
-    alignment = @getparam loader."alignment"::Int 8
-    dictencode = @getparam loader."dictencode"::Bool false
-    dictencodenested = @getparam loader."dictencodenested"::Bool false
-    denseunions = @getparam loader."denseunions"::Bool true
-    largelists = @getparam loader."largelists"::Bool false
-    maxdepth = @getparam loader."maxdepth"::Int 6
-    ntasks = @getparam loader."ntasks"::Int typemax(Int32)
+    compress         = @getparam writer."compress"::Union{Symbol, Nothing} nothing
+    alignment        = @getparam writer."alignment"::Int 8
+    dictencode       = @getparam writer."dictencode"::Bool false
+    dictencodenested = @getparam writer."dictencodenested"::Bool false
+    denseunions      = @getparam writer."denseunions"::Bool true
+    largelists       = @getparam writer."largelists"::Bool false
+    maxdepth         = @getparam writer."maxdepth"::Int 6
+    ntasks           = @getparam writer."ntasks"::Int Int(typemax(Int32))
     Arrow.write(
         io, tbl;
         compress, alignment,
         dictencode, dictencodenested,
         denseunions, largelists,
-        maxdepth, ntasks
-    )
+        maxdepth, ntasks)
 end
 
 supportedtypes(::Type{DataLoader{:arrow}}) =
