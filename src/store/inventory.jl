@@ -235,7 +235,7 @@ function load_inventory(path::String, create::Bool=true)
             convert(InventoryConfig, Dict{String, Any}()),
             CollectionInfo[], StoreSource[],
             CacheSource[], now())
-        isdir(dirname(path)) || mkpath(dirname(path))
+        isdir(dirname(path)) || mkdir(dirname(path))
         write(inventory)
         inventory
     else
